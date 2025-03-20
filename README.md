@@ -39,32 +39,119 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Laporan Praktikum
+|    |  Pemrograman Berbasis Framework 2024  |
+| ------------- | ------------- |
+| NIM | 2241720049 |
+| Nama | Lukman Eka Septiawan |
+| Kelas | TI-3A |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Langkah-langkah Praktikum 
+### 1. Persiapan Lingkungan
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Pastikan Node.js dan npm sudah terinstal di komputer Anda. Anda dapat memeriksanya dengan menjalankan perintah berikut di terminal atau command prompt: 
+```
+node -v
+npm -v
+```
+2. Buat direktori baru untuk proyek React Anda: 
+```
+mkdir praktikum-react
+cd praktikum-react
+```
+3. Inisialisasi proyek React dengan menjalankan perintah berikut: 
+```
+npx create-react-app my-react-app
+cd my-react-app
+```
+4. Jalankan aplikasi React dengan perintah: 
+```
+npm start
+```
+Aplikasi akan terbuka di browser pada alamat http://localhost:3000. 
 
-### Code Splitting
+### 2. Membuat Komponen React
+1. Buka file src/App.js di text editor Anda. 
+2. Ganti kode di dalamnya dengan kode berikut untuk membuat komponen sederhana: 
+~~~javascript
+import React from 'react';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+// Komponen Header
+function Header() {
+    return (
+        <header>
+            <h1>Aplikasi React Saya</h1>
+        </header>
+    );
+}
 
-### Analyzing the Bundle Size
+// Komponen Main
+function Main() {
+    return (
+        <main>
+            <h2>Selamat datang di Aplikasi React Saya</h2>
+            <p>Ini adalah area konten utama</p>
+        </main>
+    );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+// Komponen Footer
+function Footer() {
+    return (
+        <footer>
+            <p>$copy; 2025 Aplikasi React Saya</p>
+        </footer>
+    );
+}
 
-### Making a Progressive Web App
+// Komponen App yang menggunakan Header, Main, dan Footer
+function App() {
+    return (
+        <div>
+            <Header />
+            <Main />
+            <Footer />
+        </div>
+    );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+export default App;
+~~~
+3. Simpan file dan lihat perubahan di browser. Anda akan melihat tampilan sederhana dengan header, konten utama, dan footer. 
 
-### Advanced Configuration
+![Image Practicum 1](public\img\p1-1.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 3. Menggunakan JSX untuk Membuat Komponen Dinamis
+1. Buat file baru di direktori src dengan nama Counter.js. 
+2. Tambahkan kode berikut untuk membuat komponen Counter yang dinamis: 
+~~~javascript
+import React, { useState } frpm 'react';
 
-### Deployment
+function Counter() {
+    const [count, setCount] = useState[0];
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    function handleClick() {
+        setCount(count + 1);
+    }
+}
+~~~
+3. Buka file src/App.js dan impor komponen Counter: 
+4. Tambahkan komponen Counter ke dalam komponen App: 
+5. Simpan file dan lihat perubahan di browser. Anda akan melihat tombol "Tambah" yang dapat meningkatkan hitungan saat diklik. 
 
-### `npm run build` fails to minify
+### 4. Menggunakan Props untuk Mengirim Data
+1. Buat file baru di direktori src dengan nama Greeting.js. 
+2. Tambahkan kode berikut untuk membuat komponen Greeting yang menerima props: 
+3. Buka file src/App.js dan impor komponen Greeting: 
+4. Tambahkan komponen Greeting ke dalam komponen App dan kirim props name: 
+5. Simpan file dan lihat perubahan di browser. Anda akan melihat pesan "Halo, John!" yang ditampilkan oleh komponen Greeting. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 5. Menggunakan State untuk Mengelola Data
+1. Buka file src/App.js dan tambahkan kode berikut untuk membuat komponen yang mengelola state:
+2. Tambahkan komponen Example ke dalam komponen App: 
+3. Simpan file dan lihat perubahan di browser. Anda akan melihat form input yang dapat mengupdate state dan menampilkan data yang dimasukkan.
+
+### Tugas 
+1. Buat komponen baru bernama TodoList yang menampilkan daftar tugas (todo list). Gunakan state untuk mengelola daftar tugas dan props untuk mengirim data tugas ke komponen anak. 
+2. Tambahkan fitur untuk menambahkan tugas baru ke dalam daftar menggunakan form input. 
+3. Implementasikan fitur untuk menghapus tugas dari daftar. 

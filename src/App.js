@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
+// Header
+function Header() {
+  return (
+    <header>
+      <h1>Aplikasi React Saya</h1>
+    </header>
+  );
+}
+
+// Main
+function Main() {
+  return (
+    <main>
+      <h1>Selamat databg du Aplikasi React Saya</h1>
+      <p>Ini adalah area konten utama</p>
+    </main>
+  );
+}
+
+// Footer
+function Footer() {
+  return (
+    <footer>
+      <p>&copy; 2021 Aplikasi React Saya</p>
+    </footer>
+  );
+}
+
+// Komponen App
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
