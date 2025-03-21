@@ -125,7 +125,7 @@ export default App;
 1. Buat file baru di direktori src dengan nama Counter.js. 
 2. Tambahkan kode berikut untuk membuat komponen Counter yang dinamis: 
 ~~~javascript
-import React, { useState } frpm 'react';
+import React, { useState } from 'react';
 
 function Counter() {
     const [count, setCount] = useState[0];
@@ -133,11 +133,41 @@ function Counter() {
     function handleClick() {
         setCount(count + 1);
     }
+
+    return (
+        <div>
+            <h1>Hitungan: {count}</h1>
+            <button onClick={handleClicl}>Tambah</button>
+        </div>
+    )
+}
+
+export default Counter;
+~~~
+3. Buka file src/App.js dan impor komponen Counter:
+
+~~~javascript
+import Counter from '.Counter';
+~~~
+
+4. Tambahkan komponen Counter ke dalam komponen App: 
+
+~~~javascript
+function App() {
+    return (
+        <div>
+            <Header />
+            <Main />
+            <Counter />
+            <Footer />
+        </div>
+    );
 }
 ~~~
-3. Buka file src/App.js dan impor komponen Counter: 
-4. Tambahkan komponen Counter ke dalam komponen App: 
+
 5. Simpan file dan lihat perubahan di browser. Anda akan melihat tombol "Tambah" yang dapat meningkatkan hitungan saat diklik. 
+
+![Image for Practicum 1](public\img\p2-5.png)
 
 ### 4. Menggunakan Props untuk Mengirim Data
 1. Buat file baru di direktori src dengan nama Greeting.js. 

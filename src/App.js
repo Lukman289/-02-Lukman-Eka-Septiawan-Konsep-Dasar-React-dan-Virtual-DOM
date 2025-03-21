@@ -1,4 +1,5 @@
 import React from "react";
+import Counter from "./Counter";
 
 // Header
 function Header() {
@@ -13,7 +14,7 @@ function Header() {
 function Main() {
   return (
     <main>
-      <h1>Selamat databg du Aplikasi React Saya</h1>
+      <h1>Selamat datang di Aplikasi React Saya</h1>
       <p>Ini adalah area konten utama</p>
     </main>
   );
@@ -34,6 +35,7 @@ function App() {
     <div>
       <Header />
       <Main />
+      <Counter />
       <Footer />
     </div>
   );
