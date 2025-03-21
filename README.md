@@ -119,7 +119,7 @@ export default App;
 ~~~
 3. Simpan file dan lihat perubahan di browser. Anda akan melihat tampilan sederhana dengan header, konten utama, dan footer. 
 
-![Image Practicum 1](public\img\p1-1.png)
+![Image Practicum 1](public\img\p2-3.png)
 
 ### 3. Menggunakan JSX untuk Membuat Komponen Dinamis
 1. Buat file baru di direktori src dengan nama Counter.js. 
@@ -167,19 +167,100 @@ function App() {
 
 5. Simpan file dan lihat perubahan di browser. Anda akan melihat tombol "Tambah" yang dapat meningkatkan hitungan saat diklik. 
 
-![Image for Practicum 1](public\img\p2-5.png)
+![Image for Practicum 1](public\img\p3-5.png)
 
 ### 4. Menggunakan Props untuk Mengirim Data
 1. Buat file baru di direktori src dengan nama Greeting.js. 
 2. Tambahkan kode berikut untuk membuat komponen Greeting yang menerima props: 
-3. Buka file src/App.js dan impor komponen Greeting: 
-4. Tambahkan komponen Greeting ke dalam komponen App dan kirim props name: 
+
+~~~javascript
+function Greeting(props) {
+    return <h1>Halo, {props,name}</h1>;
+}
+
+export default Greeting;
+~~~
+
+3. Buka file src/App.js dan impor komponen Greeting:
+
+~~~javascript
+import Greeting from './Greeting';
+~~~
+
+4. Tambahkan komponen Greeting ke dalam komponen App dan kirim props name:
+
+~~~js
+function App() {
+    return (
+        <div>
+            <Header />
+            <Main />
+            <Greeting name="Lukman" />
+            <Counter />
+            <Footer />
+        </div>
+    );
+}
+~~~
+
 5. Simpan file dan lihat perubahan di browser. Anda akan melihat pesan "Halo, John!" yang ditampilkan oleh komponen Greeting. 
+
+![Image for Practicum 4](public\img\p4-5.png)
 
 ### 5. Menggunakan State untuk Mengelola Data
 1. Buka file src/App.js dan tambahkan kode berikut untuk membuat komponen yang mengelola state:
+
+~~~js
+import {useState} from "react";
+
+function Example() {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState(0);
+  const [email, setEmail] = useState("");
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  }
+  
+  const handleAgeChange = (e) => {
+    setAge(e.target.value);
+  }
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  }
+
+  return (
+    <div>
+      <input type="text" placeholder="Nama" value={name} onChange={handleNameChange} />
+      <input type="number" placeholder="Umur" value={age} onChange={handleAgeChange} />
+      <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
+      <p>{name} berumur {age} tahun dan emailnya adalah {email}</p>
+    </div>
+  )
+}
+~~~
+
 2. Tambahkan komponen Example ke dalam komponen App: 
+
+~~~js
+function App() {
+  return (
+    <div>
+      <Header />
+      <Main />
+      <Greeting name="Lukman" />
+      <Counter />
+      <Example />
+      <Footer />
+    </div>
+  );
+}
+~~~
+
 3. Simpan file dan lihat perubahan di browser. Anda akan melihat form input yang dapat mengupdate state dan menampilkan data yang dimasukkan.
+
+![Image for Practicum 5](public\img\p5-3.png)
 
 ### Tugas 
 1. Buat komponen baru bernama TodoList yang menampilkan daftar tugas (todo list). Gunakan state untuk mengelola daftar tugas dan props untuk mengirim data tugas ke komponen anak. 

@@ -9,7 +9,7 @@ function Counter() {
 
     return (
         <div>
-            <h1>Hitungan</h1>
+            <h1>Hitungan: {count} </h1>
             <button onClick={handleClick}>
                 Tambah
             </button>
